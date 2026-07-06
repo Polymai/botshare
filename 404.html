@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>BotShare — Rent robots from people near you</title>
+  <meta name="description" content="BotShare is a peer-to-peer robot rental marketplace. Browse household, garden, and work robots near you, request the dates you need, or earn money renting out your own robot.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BotShare — Rent robots from people near you">
+  <meta property="og:description" content="Browse household, garden, and work robots near you, request the dates you need, or rent out your own robot.">
+  <meta property="og:image" content="assets/hero-home-robots.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BotShare — Rent robots from people near you">
+  <meta name="twitter:description" content="Peer-to-peer robot rentals: browse robots on the map, request dates, or list your own robot.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/views.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BotShare",
+    "description": "Peer-to-peer robot rental marketplace: rent household, garden, and work robots from owners near you, or rent out your own robot.",
+    "inLanguage": "en"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#route-root">Skip to content</a>
+
+  <div id="app">
+    <!-- Static crawlable bootstrap content; replaced by the app shell on boot. -->
+    <header class="app-header">
+      <div class="container">
+        <span aria-hidden="true"></span>
+        <div class="brand-scoop" aria-hidden="true"></div>
+        <span class="brand-wordmark"><span class="wordmark-line">Bot</span><span class="wordmark-line wordmark-accent">Share</span></span>
+        <span aria-hidden="true"></span>
+      </div>
+    </header>
+    <main id="route-root" class="app-main">
+      <div class="container">
+        <section class="hero" style="border-radius: var(--radius-lg); margin-top: 16px;">
+          <div class="hero-inner" style="padding: 48px 24px;">
+            <h1>Rent robots from people near you</h1>
+            <p class="hero-lede">BotShare is a peer-to-peer robot rental marketplace. Browse household helpers, garden robots, and work robots on the map, request the dates you need, and message the owner. Robot owners publish listings with photos, skills, and daily prices, and unlock renter conversations with a one-time fee per listing.</p>
+          </div>
+        </section>
+        <section class="marketplace-section">
+          <h2>How BotShare works</h2>
+          <ul>
+            <li>Renters: browse published robots by task, price per day, and location, save favorites, and send a rental request with your dates.</li>
+            <li>Owners: create a listing with photos, skills, availability, and a map pin, then publish it to the marketplace.</li>
+            <li>Conversations: when requests arrive, owners unlock messaging for a listing with a one-time fee and agree on handover directly with the renter.</li>
+          </ul>
+          <h2>Frequently asked questions</h2>
+          <p><strong>What robots can I rent?</strong> Household assistants, lawn and garden robots, snow clearers, window cleaners, lifting helpers, and cooking robots listed by private owners.</p>
+          <p><strong>How is price set?</strong> Every listing shows the owner's price per day. You agree on handover and duration directly with the owner.</p>
+          <p><strong>How do I list my robot?</strong> Create a free account, add photos, skills, availability, and a pickup location, then publish. You pay a small one-time fee per listing to unlock renter conversations.</p>
+          <div class="inline-loading"><div class="spinner"></div><span>Loading the BotShare marketplace…</span></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <noscript>
+    <div class="container" style="padding: 24px;">
+      BotShare needs JavaScript to browse listings, view the map, and manage rentals.
+    </div>
+  </noscript>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+
+  <script src="data/supabaseConfig.js"></script>
+  <script src="data/stripeConfig.js"></script>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
